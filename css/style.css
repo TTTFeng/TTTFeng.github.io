@@ -1027,6 +1027,7 @@ pre code {
 .highlight {
   border-radius: 0px 0px 18px 18px;
   padding-bottom: 5px;
+  border-top: 1px solid var(--shadow-color-1);
 }
 .highlight pre {
   border: none;
@@ -1226,31 +1227,47 @@ pre .deletion {
   top: 0;
 }
 .highlight-container[data-rel] {
-  background: var(--highlight-background);
+  background: var(--third-background-color);
   border-radius: 18px;
+  box-shadow: var(--redefine-box-shadow-flat);
   padding-top: 20px;
   margin-top: 10px;
+}
+.highlight-container[data-rel]::before {
+  position: absolute;
+  content: attr(data-rel);
+  line-height: 38px;
+  border-radius: 50%;
+  box-shadow: none;
+  height: 12px;
+  left: 12px;
+  position: absolute;
+  width: auto;
+  margin-left: 80px;
+  top: 0;
+  color: var(--default-text-color);
+  font-weight: bold;
+  font-size: 16px;
 }
 .highlight-container[data-rel] .folded figure {
   height: 0 !important;
   width: 0 !important;
   overflow: hidden !important;
 }
-.highlight-container[data-rel]::before {
+.highlight-container[data-rel]::after {
+  content: ' ';
   position: absolute;
-  content: attr(data-rel);
-  line-height: 42px;
-  border-radius: 18px;
-  box-shadow: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fc625d;
+  width: 12px;
   height: 12px;
-  left: 4px;
-  position: absolute;
-  width: auto;
-  margin-left: 15px;
-  top: 2px;
-  color: var(--default-text-color);
-  font-weight: bold;
-  font-size: 16px;
+  top: 0;
+  left: 20px;
+  margin-top: 13px;
+  -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+  box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+  z-index: 3;
 }
 :root {
   --background-color: #fff;

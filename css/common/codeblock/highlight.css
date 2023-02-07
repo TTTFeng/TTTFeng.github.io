@@ -356,7 +356,6 @@ pre code {
 .highlight {
   border-radius: 0px 0px 18px 18px;
   padding-bottom: 5px;
-  border-top: 1px solid var(--shadow-color-1);
 }
 .highlight pre {
   border: none;
